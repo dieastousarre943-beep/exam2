@@ -1,0 +1,468 @@
+/* RESET ET BASES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #FFF7ED; /* Fond clair */
+    color: #1C1917; /* Texte principal */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* HEADER ET NAV */
+.ABC-header {
+    background-color: #7C2D12; /* Couleur secondaire */
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.ABC-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.ABC-nav ul li {
+    margin-left: 20px;
+}
+
+.ABC-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ABC-nav ul li a:hover, .ABC-nav ul li a.active {
+    color: #FBBF24; /* Couleur d'accent */
+}
+
+/* HERO SECTION */
+.ABC-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banniere.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.ABC-hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* BOUTONS */
+.ABC-buttons {
+    margin-top: 20px;
+}
+
+.btn-principal, .btn-accent {
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px; /* Boutons arrondis */
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-principal {
+    background-color: #D97706; /* Couleur principale */
+    color: white;
+}
+
+.btn-accent {
+    background-color: #FBBF24; /* Couleur accent */
+    color: #1C1917;
+}
+
+/* PLATS POPULAIRES (GRID) */
+.ABC-populaire {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.ABC-grid-plats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.ABC-card {
+    background-color: #FFFFFF; /* Fond carte */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.ABC-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+.ABC-footer {
+    background-color: #7C2D12;
+    color: white;
+    padding: 2rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.ABC-footer-box {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.ABC-footer-box a {
+    color: #FBBF24;
+    text-decoration: none;
+}
+
+.ABC-copyright {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE : TABLETTE */
+@media (max-width: 992px) {
+    .ABC-grid-plats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVE : SMARTPHONE */
+@media (max-width: 600px) {
+    .ABC-header {
+        flex-direction: column;
+    }
+    
+    .ABC-nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ABC-nav ul li {
+        margin: 5px 0;
+    }
+
+    .ABC-grid-plats {
+        grid-template-columns: 1fr;
+    }
+
+    .ABC-hero-content h2 {
+        font-size: 1.8rem;
+    }
+}
+/* STYLES SPECIFIQUES AU MENU */
+.ABC-page-title {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: #7C2D12;
+    color: white;
+}
+
+.ABC-menu-container {
+    padding: 3rem 10%;
+}
+
+/* Grille : 2 colonnes sur ordinateur */
+.ABC-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+}
+
+.ABC-menu-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; /* Aligne l'image à gauche et le texte à droite */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.ABC-menu-card img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.ABC-card-content {
+    padding: 20px;
+    width: 60%;
+}
+
+.ABC-badge {
+    background-color: #FBBF24;
+    color: #1C1917;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ABC-price {
+    display: block;
+    color: #D97706;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* RESPONSIVE MENU */
+
+/* Tablette : On garde 2 colonnes mais on empile image/texte si besoin */
+@media (max-width: 992px) {
+    .ABC-menu-container {
+        padding: 2rem 5%;
+    }
+}
+
+/* Téléphone : 1 seule colonne et image au dessus du texte */
+@media (max-width: 768px) {
+    .ABC-menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ABC-menu-card {
+        flex-direction: column;
+    }
+
+    .ABC-menu-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .ABC-card-content {
+        width: 100%;
+    }
+}/* STYLES À-PROPOS */
+.ABC-about-hero {
+    padding: 4rem 10%;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.ABC-values {
+    padding: 3rem 5%;
+    background-color: #FFF7ED;
+}
+
+.ABC-values h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #D97706;
+}
+
+.ABC-flex-values {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ABC-value-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ABC-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.ABC-team-ambiance {
+    padding: 3rem 5%;
+}
+
+.ABC-content-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.ABC-content-split.reverse {
+    flex-direction: row-reverse;
+}
+
+.ABC-text-box, .ABC-img-box {
+    flex: 1;
+}
+
+.ABC-img-box img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE À-PROPOS */
+@media (max-width: 768px) {
+    .ABC-content-split, .ABC-content-split.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .ABC-about-hero {
+        padding: 2rem 5%;
+    }
+}/* STYLES GALERIE */
+.ABC-gallery-container {
+    padding: 3rem 5%;
+}
+
+.ABC-gallery-grid {
+    display: grid;
+    /* Ordinateur : 3 ou 4 images par ligne */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+}
+
+.ABC-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 250px;
+}
+
+.ABC-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ABC-gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.ABC-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(124, 45, 18, 0.8); /* Couleur secondaire avec transparence */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE GALERIE */
+
+/* Tablette : 2 images par ligne */
+@media (max-width: 992px) {
+    .ABC-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Téléphone : 1 image par ligne */
+@media (max-width: 600px) {
+    .ABC-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ABC-gallery-item {
+        height: 300px;
+    }
+}/* STYLES RÉSERVATION */
+.ABC-reservation-container {
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: center;
+    background-color: #FFF7ED;
+}
+
+.ABC-form-wrapper {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.ABC-form-group {
+    margin-bottom: 20px;
+}
+
+.ABC-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #7C2D12;
+}
+
+.ABC-form-group input, 
+.ABC-form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.ABC-form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.ABC-form-row .ABC-form-group {
+    flex: 1;
+}
+
+.ABC-full-width {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.ABC-full-width:hover {
+    background-color: #7C2D12;
+    color: white;
+}
+
+/* RESPONSIVE RÉSERVATION */
+@media (max-width: 600px) {
+    .ABC-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .ABC-form-wrapper {
+        padding: 20px;
+    }
+}
