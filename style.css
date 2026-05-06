@@ -194,7 +194,6 @@ h1, h2, h3 {
 .ABC-menu-card {
     background-color: #FFFFFF;
     border-radius: 12px;
-    overflow: hidden;
     display: flex; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     border: 1px solid #eee;
